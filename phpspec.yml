@@ -1,0 +1,7 @@
+suites:
+    core:
+        spec_prefix: phpspec
+        namespace: Paranoid
+        psr4_prefix: Paranoid
+        src_path: src
+        spec_path: tests

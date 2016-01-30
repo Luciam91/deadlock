@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Run our deployment script
+./opt/deployment/testing/deploy
+
+# Run the test suit
+./bin/phpspec run --format=pretty

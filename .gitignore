@@ -1,0 +1,7 @@
+composer.lock
+var/cache
+var/log
+web/bundles
+bin
+.idea
+lib
