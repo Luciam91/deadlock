@@ -16,7 +16,8 @@ class Member
 
     private function __construct()
     {
-        $this->salt = Uuid::uuid4()->toString();
+        $this->identifier = Uuid::uuid4()->toString();
+        $this->salt = md5(Uuid::uuid4()->toString());
     }
 
 
@@ -34,7 +35,7 @@ class Member
     }
 
 
-    public function email()
+    public function email(): string
     {
         return $this->email;
     }
@@ -43,5 +44,11 @@ class Member
     public function password(): string
     {
         return $this->password;
+    }
+
+
+    public function identifier(): string
+    {
+        return $this->identifier;
     }
 }

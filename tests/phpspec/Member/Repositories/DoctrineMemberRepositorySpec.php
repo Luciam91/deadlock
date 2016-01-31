@@ -9,6 +9,10 @@ use Prophecy\Argument;
 
 class DoctrineMemberRepositorySpec extends ObjectBehavior
 {
+    protected $connection;
+
+    protected $tableName;
+
     function it_is_initializable()
     {
         $this->shouldHaveType('Paranoid\Member\Repositories\MemberRepository');
@@ -16,11 +20,23 @@ class DoctrineMemberRepositorySpec extends ObjectBehavior
 
     function let(Connection $connection)
     {
-        $this->beConstructedWith($connection);
+        $this->beConstructedWith('members', $connection);
+        $this->connection = $connection;
+        $this->tableName = 'members';
     }
-
-    function it_should_save_a_member(Member $member)
+//
+    function it_should_save_a_member()
     {
-//        $this->save($member);
+        $member = Member::create('test@test.test', 'password');
+
+        $this->connection->update(
+            $this->tableName,
+            json_decode(json_encode($member), true),
+            [
+                'identifier' => $member->identifier()
+            ]
+        )->shouldBeCalled();
+
+        $this->update($member);
     }
 }

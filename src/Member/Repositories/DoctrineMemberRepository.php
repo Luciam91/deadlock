@@ -8,9 +8,12 @@ class DoctrineMemberRepository implements MemberRepository
 {
     protected $connection;
 
-    public function __construct(Connection $connection)
+    protected $tableName;
+
+    public function __construct(string $tableName, Connection $connection)
     {
         $this->connection = $connection;
+        $this->tableName = $tableName;
     }
 
     public function findOneFromIdentifier($identifier): Member
@@ -28,8 +31,14 @@ class DoctrineMemberRepository implements MemberRepository
 
     }
 
-    public function save(Member $member)
+    public function update(Member $member)
     {
-        // TODO: Implement save() method.
+        $this->connection->update(
+            $this->tableName,
+            json_decode(json_encode($member), true),
+            [
+                'identifier' => $member->identifier()
+            ]
+        );
     }
 }

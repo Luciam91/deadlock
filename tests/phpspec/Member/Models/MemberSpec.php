@@ -53,4 +53,9 @@ class MemberSpec extends ObjectBehavior
             ->password()
             ->shouldBe('password');
     }
+
+    function it_should_return_an_identifier()
+    {
+        $this->identifier()->shouldBeString();
+    }
 }
