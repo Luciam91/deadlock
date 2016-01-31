@@ -1,5 +1,5 @@
 <?php
-namespace Paranoid\Exceptions\Member;
+namespace Paranoid\Member\Exceptions;
 
 
 class MemberAlreadyExistsException extends \LogicException

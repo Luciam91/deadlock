@@ -1,7 +1,7 @@
 <?php
-namespace Paranoid\Repositories\Member;
+namespace Paranoid\Member\Repositories;
 
-use Paranoid\Entities\Member;
+use Paranoid\Member\Models\Member;
 
 interface MemberRepository
 {

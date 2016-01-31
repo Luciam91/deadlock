@@ -1,12 +1,18 @@
 <?php
-namespace Paranoid\Repositories\Member;
+namespace Paranoid\Member\Repositories;
 
+use Doctrine\DBAL\Connection;
+use Paranoid\Member\Models\Member;
 
-use Doctrine\ORM\EntityRepository;
-use Paranoid\Entities\Member;
-
-class DoctrineMemberRepository extends EntityRepository implements MemberRepository
+class DoctrineMemberRepository implements MemberRepository
 {
+    protected $connection;
+
+    public function __construct(Connection $connection)
+    {
+        $this->connection = $connection;
+    }
+
     public function findOneFromIdentifier($identifier): Member
     {
         // TODO: Implement findOneFromIdentifier() method.

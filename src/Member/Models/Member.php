@@ -1,6 +1,6 @@
 <?php
 
-namespace Paranoid\Entities;
+namespace Paranoid\Member\Models;
 
 use Ramsey\Uuid\Uuid;
 

@@ -1,5 +1,5 @@
 <?php
-namespace Paranoid\Handlers\Member;
+namespace Paranoid\Member\Exceptions;
 
 
 class NoMemberFoundForEmailAddressException extends \LogicException

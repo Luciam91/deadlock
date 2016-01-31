@@ -1,9 +1,9 @@
 <?php
 
-namespace phpspec\Paranoid\Handlers\Member;
+namespace phpspec\Paranoid\Member\Handlers;
 
-use Paranoid\Entities\Member;
-use Paranoid\Repositories\Member\MemberRepository;
+use Paranoid\Member\Models\Member;
+use Paranoid\Member\Repositories\MemberRepository;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -13,7 +13,7 @@ class CreateMemberHandlerSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Paranoid\Handlers\Member\CreateMemberHandler');
+        $this->shouldHaveType('Paranoid\Member\Handlers\CreateMemberHandler');
     }
 
     function let(MemberRepository $memberRepository)
@@ -45,7 +45,7 @@ class CreateMemberHandlerSpec extends ObjectBehavior
             ->willReturn(true);
 
         $this
-            ->shouldThrow('\Paranoid\Exceptions\Member\MemberAlreadyExistsException')
+            ->shouldThrow('\Paranoid\Member\Exceptions\MemberAlreadyExistsException')
             ->during(
                 'handle',
                 ['test@test.test', 'password']

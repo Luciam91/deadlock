@@ -1,10 +1,10 @@
 <?php
-namespace Paranoid\Handlers\Member;
+namespace Paranoid\Member\Handlers;
 
 
-use Paranoid\Entities\Member;
-use Paranoid\Exceptions\Member\MemberAlreadyExistsException;
-use Paranoid\Repositories\Member\MemberRepository;
+use Paranoid\Member\Exceptions\MemberAlreadyExistsException;
+use Paranoid\Member\Models\Member;
+use Paranoid\Member\Repositories\MemberRepository;
 
 class CreateMemberHandler
 {
