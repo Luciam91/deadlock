@@ -58,4 +58,12 @@ class MemberSpec extends ObjectBehavior
     {
         $this->identifier()->shouldBeString();
     }
+
+
+    function it_should_be_able_to_change_an_email_address()
+    {
+        $this->updateEmail('new_email@test.com');
+
+        $this->email()->shouldBe('new_email@test.com');
+    }
 }

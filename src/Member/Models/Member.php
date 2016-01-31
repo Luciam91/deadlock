@@ -51,4 +51,10 @@ class Member
     {
         return $this->identifier;
     }
+
+
+    public function updateEmail(string $emailAddress)
+    {
+        $this->email = $emailAddress;
+    }
 }

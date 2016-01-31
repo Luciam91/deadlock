@@ -25,9 +25,11 @@ class DoctrineMemberRepositorySpec extends ObjectBehavior
         $this->tableName = 'members';
     }
 //
-    function it_should_save_a_member()
+    function it_should_save_an_update()
     {
         $member = Member::create('test@test.test', 'password');
+
+        $member->updateEmail('testEmail@test.test');
 
         $this->connection->update(
             $this->tableName,
