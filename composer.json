@@ -29,7 +29,7 @@
     },
     "require-dev": {
         "behat/behat": "dev-master",
-        "phpspec/phpspec": "^2.1",
+        "phpspec/phpspec": "^2.5",
         "phpunit/phpunit": "^4.4"
     }
 }

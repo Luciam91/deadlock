@@ -5,8 +5,8 @@ use Paranoid\Member\Models\Member;
 
 interface MemberRepository
 {
-    public function findOneFromIdentifier($identifier): Member;
-    public function findOneFromEmail($emailAddress): Member;
-    public function doesEmailExist($emailAddress): bool;
+    public function findOneFromIdentifier(string $identifier): Member;
+    public function findOneFromEmail(string $emailAddress): Member;
+    public function doesEmailExist(string $emailAddress): bool;
     public function update(Member $member);
 }

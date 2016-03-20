@@ -16,17 +16,17 @@ class DoctrineMemberRepository implements MemberRepository
         $this->tableName = $tableName;
     }
 
-    public function findOneFromIdentifier($identifier): Member
+    public function findOneFromIdentifier(string $identifier): Member
     {
         // TODO: Implement findOneFromIdentifier() method.
     }
 
-    public function findOneFromEmail($emailAddress): Member
+    public function findOneFromEmail(string $emailAddress): Member
     {
         // TODO: Implement findOneFromEmail() method.
     }
 
-    public function doesEmailExist($emailAddress): bool
+    public function doesEmailExist(string $emailAddress): bool
     {
 
     }
